@@ -149,6 +149,11 @@
 <p>图片修改时间：2022年4月底-2022年5月初。</p>
 <h2 id="hexo本地图片"><a href="#hexo本地图片" class="headerlink" title="hexo本地图片"></a>hexo本地图片</h2><p>将图片放入themes/（主题）/source文件夹里，那么在posts文件夹的博客文章里调用图片的路径为/themes/（主题）/source/（图片名称.图片后缀）。这样在vs code预览里没问题，但是上传后发现不显示图片，也尝试了搜索到的一些方法，也都没效果。</p>
 <p>考虑本地图片是因为创业logo那张图没法上传常用的路过图床，本地图片也试不起来，就也试了下qq相册，也是显示不了，所以重新找了几个图床，但很多速度都不行，最后用的是速度ok的<a target="_blank" rel="noopener" href="https://www.superbed.cn/">聚合图床</a>。</p>
+<p>几天后（2022年5月初）又尝试了本地图片，参考<a target="_blank" rel="noopener" href="https://leay.net/2019/12/25/hexo/">Hexo 引用本地图片以及引用本地任意位置图片的一点思路</a>这篇博客，开启本地静态资源的post_asset_folder: true和给引用的本地图片添加绝对路径的hexo-asset-image与之前一致，然后在这篇博客中提到了兼容懒加载的hqweay/hexo-asset-image。</p>
+<p>在弄好这三步操作后，在source/_posts下新建文件夹img，并放入番薯夹logo配图.jpg，调用的图片链接则是img/番薯夹logo配图.jpg，VS Code的预览中会显示图片，但是上传后依旧不显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img data-src=&quot;img/番薯夹logo配图.jpg&quot; class=&quot;img-show-post-cover-class&quot; src=&quot;img/番薯夹logo配图.jpg&quot;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path: /2022/04/24/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AA%92%E4%BD%93/img/%E7%95%AA%E8%96%AF%E5%A4%B9logo%E9%85%8D%E5%9B%BE.jpg</span><br><span class="line">referer: https://islandfsj.github.io/2022/04/24/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AA%92%E4%BD%93/</span><br></pre></td></tr></table></figure>
+
 <style>p{text-indent:2em}</style>
         <!-- 分类文章 -->
         
