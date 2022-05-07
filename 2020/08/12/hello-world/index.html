@@ -151,9 +151,16 @@
 <p>考虑本地图片是因为创业logo那张图没法上传常用的路过图床，本地图片也试不起来，就也试了下qq相册，也是显示不了，所以重新找了几个图床，但很多速度都不行，最后用的是速度ok的<a target="_blank" rel="noopener" href="https://www.superbed.cn/">聚合图床</a>。</p>
 <p>几天后（2022年5月初）又尝试了本地图片，参考<a target="_blank" rel="noopener" href="https://leay.net/2019/12/25/hexo/">Hexo 引用本地图片以及引用本地任意位置图片的一点思路</a>这篇博客，开启本地静态资源的post_asset_folder: true和给引用的本地图片添加绝对路径的hexo-asset-image与之前一致，然后在这篇博客中提到了兼容懒加载的hqweay/hexo-asset-image。</p>
 <p>在弄好这三步操作后，在source/_posts下新建文件夹img，并放入番薯夹logo配图.jpg，调用的图片链接则是img/番薯夹logo配图.jpg，VS Code的预览中会显示图片，但是上传后依旧不显示。</p>
+<p>按F12查看网页的html代码，data-src中的图片指向已经是绝对路径了。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img data-src=&quot;img/番薯夹logo配图.jpg&quot; class=&quot;img-show-post-cover-class&quot; src=&quot;img/番薯夹logo配图.jpg&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>再查看报错的指令，发现对于该图片的请求路径path并不是直接指向img，而是指向该与博客md文件所处的文件夹中，github代码库中也没有找到img文件夹。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path: /2022/04/24/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AA%92%E4%BD%93/img/%E7%95%AA%E8%96%AF%E5%A4%B9logo%E9%85%8D%E5%9B%BE.jpg</span><br><span class="line">referer: https://islandfsj.github.io/2022/04/24/%E4%B8%AA%E4%BA%BA%E8%87%AA%E5%AA%92%E4%BD%93/</span><br></pre></td></tr></table></figure>
 
+<p>所以还是得给每个博客建立同名文件夹，重新上传后，在github代码库中看到了islandfsj.github.io/2022/04/24/个人自媒体/番薯夹logo配图.jpg，但是依然存在图片上传至github后无法显示图片，报错内容则是无法加载图片。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to load resource</span><br></pre></td></tr></table></figure>
+
+<p>值得一提的是，我之前在public文件夹下放入logo.png，用于网页，在github代码库中则是islandfsj.github.io/logo.png，在white/_config.yml里则是icon: logo.png，</p>
 <style>p{text-indent:2em}</style>
         <!-- 分类文章 -->
         
