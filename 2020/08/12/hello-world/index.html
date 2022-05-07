@@ -10,7 +10,7 @@
   <meta name="description" content="A minimalist theme for hexo.">
   <!-- 标签页图标 -->
   
-  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
   
 
   <!-- 图标库 -->
@@ -160,11 +160,11 @@
 <p>所以还是得给每个博客建立同名文件夹，重新上传后，在github代码库中看到了islandfsj.github.io/2022/04/24/个人自媒体/番薯夹logo配图.jpg，但是依然存在图片上传至github后无法显示图片，在首页的报错内容则是无法加载图片，但是在该博客页面内的显示并无问题。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to load resource</span><br></pre></td></tr></table></figure>
 
-<p>值得一提的是，我之前在public文件夹下放入logo.png，用于网页，在github代码库中则是islandfsj.github.io/logo.png，在white/_config.yml里则是icon: logo.png，并无显示问题。</p>
-<p>因此重新查看首页里的请求路径。</p>
+<p>值得一提的是，我之前在public文件夹下放入logo.png，用于网页，在github代码库中则是islandfsj.github.io/logo.png，在white/_config.yml里则是icon: logo.png，并无显示问题，但是这次我注意到，在博客中对logo.png的请求没有响应。</p>
+<p>因此重新查看首页里对番薯夹logo配图.jpg的请求路径。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path: /%E7%95%AA%E8%96%AF%E5%A4%B9logo%E9%85%8D%E5%9B%BE.jpg</span><br><span class="line">referer: https://islandfsj.github.io/</span><br></pre></td></tr></table></figure>
 
-<p>因此在/public/img下放置</p>
+<p>因此在/public/img下放置logo和博客封面，在source/_posts/博客同名文件夹/img下放置logo、博客封面、博客配图。</p>
 <style>p{text-indent:2em}</style>
         <!-- 分类文章 -->
         
