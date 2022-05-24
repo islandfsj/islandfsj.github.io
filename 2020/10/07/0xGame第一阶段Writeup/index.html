@@ -107,7 +107,7 @@
       <div class="post-title animate__animated  animate__fadeInUp">0xGame第一阶段Writeup</div>
       <div class="meta-intro animate__animated  animate__fadeInUp">Oct 07 2020</div>
       
-        <div class="post-cover"><span class="lazyload-img-span"><img data-src="img/0xGame Writeup.jpg" class="post-cover-img"></span></div>
+        <div class="post-cover"><span class="lazyload-img-span"><img data-src="img/0xGameWriteup.jpg" class="post-cover-img"></span></div>
       
     </div>
     <div class="post-content-inner">
@@ -134,20 +134,20 @@
 <h2 id="Web-view-source"><a href="#Web-view-source" class="headerlink" title="Web view_source"></a>Web view_source</h2><p>打开web地址后，Ctrl+u，即可查看网页的view_source，即可看到flag</p>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://s1.ax1x.com/2020/10/07/0dzYC9.png">
+        <img data-src="/2020/10/07/0xGame%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5Writeup/img/viewsource%EF%BC%88%E4%B8%8D%E5%8F%AF%E5%95%86%E7%94%A8%EF%BC%89.png">
         
       </span></p>
-<h2 id="Web-get-amp-post"><a href="#Web-get-amp-post" class="headerlink" title="Web get&amp;post"></a>Web get&amp;post</h2><p>打开web地址后，按F12，使用Max HacKBar插件（<a target="_blank" rel="noopener" href="https://s1.ax1x.com/2020/10/07/0dzYC9.png">Max HacKBar工具安装地址,Firefox浏览器</a>），先点Load URL，旁边的文本框会显示当前web地址，在地址后添加?0xGame=acd666tql，点Post Data，在Post表中填写X1cT34m=acd666tql，使得view_source中的语句成立（isset($_GET/POST())表示在GET/POST表中是否声明，”===”表示除了数据相等外，数据类型也相等，才会返回True），输出flag（echo用于输出字符串）</p>
+<h2 id="Web-get-amp-post"><a href="#Web-get-amp-post" class="headerlink" title="Web get&amp;post"></a>Web get&amp;post</h2><p>打开web地址后，按F12，使用Firefox浏览器的Max HacKBar插件，先点Load URL，旁边的文本框会显示当前web地址，在地址后添加?0xGame=acd666tql，点Post Data，在Post表中填写X1cT34m=acd666tql，使得view_source中的语句成立（isset($_GET/POST())表示在GET/POST表中是否声明，”===”表示除了数据相等外，数据类型也相等，才会返回True），输出flag（echo用于输出字符串）</p>
 <p>
         <span class="lazyload-img-span">
-        <img data-src="https://s1.ax1x.com/2020/10/07/0wStIg.png">
+        <img data-src="/2020/10/07/0xGame%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5Writeup/img/get&post%EF%BC%88%E4%B8%8D%E5%8F%AF%E5%95%86%E7%94%A8%EF%BC%89.png">
         
       </span></p>
 <h2 id="Web-readflag"><a href="#Web-readflag" class="headerlink" title="Web readflag"></a>Web readflag</h2><p>打开web地址后输入框内显示请输入Linux命令，根据网上的linux命令表，cat /filename就是打开当前目录下的名为filename的文件，输入cat /flag即可看到flag。</p>
 <h2 id="Misc-签到题"><a href="#Misc-签到题" class="headerlink" title="Misc 签到题"></a>Misc 签到题</h2><p>打开<a target="_blank" rel="noopener" href="http://game.0xctf.com/rules%EF%BC%8C%E7%AD%94%E6%A1%88%E5%B0%B1%E5%BE%88%E6%98%8E%E6%98%BE%E4%BA%86%E3%80%82">http://game.0xctf.com/rules，答案就很明显了。</a></p>
 <h2 id="Reverse-签到"><a href="#Reverse-签到" class="headerlink" title="Reverse 签到"></a>Reverse 签到</h2><p>下载<a target="_blank" rel="noopener" href="http://www.idapro.com.cn/services.html">ida（在官网下载试用版）</a>，用ida打开1.exe，在流程图界面下，右击选择Text view即可以文本形式显示，在Text中寻找，即可找到flag。</p>
 <h2 id="Reverse-壳，了解一下"><a href="#Reverse-壳，了解一下" class="headerlink" title="Reverse 壳，了解一下"></a>Reverse 壳，了解一下</h2><p>在github上找到<a target="_blank" rel="noopener" href="https://github.com/upx/upx">upx</a>，下载压缩包，然后解压，win+R然后输入cmd，进入命令行界面，输入cd upx文件夹的本地地址，回车后再输入upx -d 2.exe执行对2.exe的脱壳（把2.exe放在upx文件夹内，可以在执行upx指令时直接写文件名，而省略文件所在地址），显示脱壳成功后，再用ida打开2.exe，即可寻找到flag</p>
-<h2 id="Reverse-py一下"><a href="#Reverse-py一下" class="headerlink" title="Reverse py一下"></a>Reverse py一下</h2><p>下载<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">python</a>，比较推荐使用3.8版本，后面用于反编译的uncompyle6不支持python3.9，Python 2.7.9+或Python 3.4+以上的版本都是自带<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-pip-install-usage.html">pip工具</a> ，所以不需要额外再下载，然后<a target="_blank" rel="noopener" href="https://blog.csdn.net/Long_cheng_wang/article/details/101837825?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">吧python和pip添加到环境变量中</a>，最后在命令行界面中安装、执行uncompyle由1.pyc得到1.py，然后根据1.py内的内容编写反向操作的python语句，执行后便可得到flag</p>
+<h2 id="Reverse-py一下"><a href="#Reverse-py一下" class="headerlink" title="Reverse py一下"></a>Reverse py一下</h2><p>下载<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">python</a>，比较推荐使用3.8版本，后面用于反编译的uncompyle6不支持python3.9，Python 2.7.9+或Python 3.4+以上的版本都是自带<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-pip-install-usage.html">pip工具</a> ，所以不需要额外再下载，然后<a target="_blank" rel="noopener" href="https://blog.csdn.net/Long_cheng_wang/article/details/101837825?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param">把python和pip添加到环境变量中</a>，最后在命令行界面中安装、执行uncompyle由1.pyc得到1.py，然后根据1.py内的内容编写反向操作的python语句，执行后便可得到flag</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import py_compile</span><br><span class="line">from base64 import *</span><br><span class="line">check = [48, 121, 101, 98, 105, 96, 125, 97, 101, 112, 115, 84, 96, 126, 81, 123, 39, 34, 77, 42, 36, 113, 73, 39, 126, 70, 106, 108, 114, 96, 19]</span><br><span class="line"></span><br><span class="line">flag = &#x27;&#x27;</span><br><span class="line"></span><br><span class="line">for i in range(len(check)):</span><br><span class="line">    i^=check[i]</span><br><span class="line">    flag +=chr(i)</span><br><span class="line"></span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
 
 <style>p{text-indent:2em}</style>
