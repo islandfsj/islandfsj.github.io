@@ -170,6 +170,10 @@
 <p>由于电脑里同时有02-16（初期暂为hexo）和islandfsj的hexo博客，所以在弄清除这些本地图片加载的事情后，将islandfsj这边的logo.png更名为番薯夹logo.png,02-16那边的logo.png更名为02-16 logo.png。PS.如果之前注意到这两个用的都是logo.png，肯定之前就更名了。</p>
 <p>但在markdown调用图片或链接的语句中，图片名不能有空格（如果想输入文件原本的中文名而不是那一串很长的编码），本地编辑预览中就会不显示链接，但是封面的调用并不会出错，因此还是建议图片名都避免空格。（例如02-16 logo.png=&gt;02-16logo.png）</p>
 <p>本地图片调用解决时，由于图片版权的更改也基本完成，所以将再次将博客中的图片更改为本地文件，部分会是从图床下载回电脑，部分会是将本地图片文件放入博客（在2022年5月底大量地改为本地图片时，从效率上考虑，更多还是从图床上下载回电脑）。</p>
+<p>在整体调整为本地图片并上传后，发现了另一个问题，就是在博客首页第二页的时候，图片的获取又出现了报错，查看请求路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:path: /page/2/img/MY%E9%98%BF%E6%A3%AE%E7%BA%B3%E5%8D%9A%E5%AE%A2%E5%B0%81%E9%9D%A2%EF%BC%88%E4%B8%8D%E5%8F%AF%E5%95%86%E7%94%A8%EF%BC%89.jpg</span><br></pre></td></tr></table></figure>
+
+<p>所以在public下额外建page文件夹，page文件夹下再建2文件夹，2文件夹下再建img文件夹（查看了下本地文件，page文件夹和2文件夹都已经自动生成了），然后放入首页博客的logo和第二页的博客文章封面。</p>
 <style>p{text-indent:2em}</style>
         <!-- 分类文章 -->
         
