@@ -203,11 +203,11 @@
 <p>波分复用：光的频分复用，在一根光纤上传输多路光载波信号</p>
 <h2 id="3-4-数据交换技术"><a href="#3-4-数据交换技术" class="headerlink" title="3.4 数据交换技术"></a>3.4 数据交换技术</h2><h3 id="3-4-1-电报交换"><a href="#3-4-1-电报交换" class="headerlink" title="3.4.1 电报交换"></a>3.4.1 电报交换</h3><p>占用子信道；主、被叫间建立物理连接；静态的时分复用；实时交换；没有差错控制措施</p>
 <h3 id="3-4-2-报文交换和分组交换（存储-转发）"><a href="#3-4-2-报文交换和分组交换（存储-转发）" class="headerlink" title="3.4.2 报文交换和分组交换（存储-转发）"></a>3.4.2 报文交换和分组交换（存储-转发）</h3><p>报文交换：含有报头，包含双方地址，可一对多传输；转发时延大，随机性也大</p>
-<p>分组交换：包括 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2/22250047?fr=aladdin">数据报分组交换</a> 和 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%99%9A%E7%94%B5%E8%B7%AF%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2">虚电路分组交换</a> ;传输前不需要建立连接；动态时分复用；网络生存性好；平均时延高于电路交换，不能满足实时应用要求；需要交换机分析处理</p>
+<p>分组交换：包括 数据报分组交换和 虚电路分组交换;传输前不需要建立连接；动态时分复用；网络生存性好；平均时延高于电路交换，不能满足实时应用要求；需要交换机分析处理</p>
 <h2 id="3-5-差错控制技术"><a href="#3-5-差错控制技术" class="headerlink" title="3.5 差错控制技术"></a>3.5 差错控制技术</h2><h3 id="3-5-1-差错控制原理"><a href="#3-5-1-差错控制原理" class="headerlink" title="3.5.1 差错控制原理"></a>3.5.1 差错控制原理</h3><p>随机差错：位置随机且独立</p>
 <p>突发差错：成片出现</p>
 <p>加入监督位，使数据间具有约束关系；数据片段不足最小片段长度时添加冗余信息</p>
-<h3 id="3-5-2-差错控制方式"><a href="#3-5-2-差错控制方式" class="headerlink" title="3.5.2 差错控制方式"></a>3.5.2 差错控制方式</h3><p>检错重发：通知发送端重发，如 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ARQ">ARQ</a> </p>
+<h3 id="3-5-2-差错控制方式"><a href="#3-5-2-差错控制方式" class="headerlink" title="3.5.2 差错控制方式"></a>3.5.2 差错控制方式</h3><p>检错重发：通知发送端重发，如 ARQ</p>
 <p>前向纠错：直接纠正错码</p>
 <p>混合纠错检错：少量差错情况下自动纠错，否则请求重传</p>
 <p>信息反馈：接收信息全部转发给发送端</p>
@@ -226,8 +226,8 @@
 <p>媒体访问控制方法：信道划分、轮询（基于令牌）、随机访问</p>
 <h3 id="4-1-3-基于轮询的媒体访问方法"><a href="#4-1-3-基于轮询的媒体访问方法" class="headerlink" title="4.1.3 基于轮询的媒体访问方法"></a>4.1.3 基于轮询的媒体访问方法</h3><p>令牌总线网：沿着逻辑环传送令牌</p>
 <p>令牌环网：访问时间有上限</p>
-<h3 id="4-1-4-基于随机访问的媒体访问方法"><a href="#4-1-4-基于随机访问的媒体访问方法" class="headerlink" title="4.1.4 基于随机访问的媒体访问方法"></a>4.1.4 基于随机访问的媒体访问方法</h3><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/aloha%E5%8D%8F%E8%AE%AE/9441574?fr=aladdin">ALOHA协议</a> ：纯ALOHA协议和时隙ALOHA协议</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%BD%E6%B3%A2%E7%9B%91%E5%90%AC%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE/9704729?fromtitle=CSMA&fromid=3112334&fr=aladdin">CSMA</a> ：CSMA起源于ALOHA协议；1-持续CSMA：发送数据概率100%；非持续CSMA：降低冲突概率，增大了发送时延；p-持续CSMA：概率p传送，概率q=1-p推迟到下一时隙传送</p>
+<h3 id="4-1-4-基于随机访问的媒体访问方法"><a href="#4-1-4-基于随机访问的媒体访问方法" class="headerlink" title="4.1.4 基于随机访问的媒体访问方法"></a>4.1.4 基于随机访问的媒体访问方法</h3><p>ALOHA协议：纯ALOHA协议和时隙ALOHA协议</p>
+<p>CSMA ：CSMA起源于ALOHA协议；1-持续CSMA：发送数据概率100%；非持续CSMA：降低冲突概率，增大了发送时延；p-持续CSMA：概率p传送，概率q=1-p推迟到下一时隙传送</p>
 <h2 id="4-2-以太网技术"><a href="#4-2-以太网技术" class="headerlink" title="4.2 以太网技术"></a>4.2 以太网技术</h2><h3 id="4-2-1-以太网概述"><a href="#4-2-1-以太网概述" class="headerlink" title="4.2.1 以太网概述"></a>4.2.1 以太网概述</h3><p>Ethernet（以太网）：1975年由Xerox（施乐）公司的Metcalfe提出</p>
 <p>1980年，DEC、Intel和Xerox（施乐）联手推出DIX Ethernet 1.0标准</p>
 <p>DIX Ethernet 2.0标准与IEEE 802.3标准只有很小的区别（帧的格式）</p>
